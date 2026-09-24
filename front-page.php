@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <?php
-$hero_image = wp_get_attachment_image_url(6, 'full');
+$hero_image = wp_get_attachment_image_url(15, 'full');
 
 ?>
 <main>
