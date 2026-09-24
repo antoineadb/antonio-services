@@ -10,7 +10,7 @@ $hero_image = wp_get_attachment_image_url(6, 'full');
       <h1>Besoin d'aide ?<br>Je suis là.</h1>
 
       <p>
-        Services du quotidien, compagnie et accompagnement.<br>
+        Sergit remote add origin https://github.com/antoineadb/antonio-services.gitvices du quotidien, compagnie et accompagnement.<br>
         Informatique, démarches, achats, installation de matériel…<br>
         Restaurant, cinéma, théâtre, <br>événement ou simplement
         l'envie de partager un moment agréable.
