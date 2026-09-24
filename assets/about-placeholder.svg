@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700">
+<rect width="900" height="700" fill="#dceff8"/><circle cx="450" cy="250" r="130" fill="#0d4f86" opacity=".75"/>
+<path d="M170 650 Q450 380 730 650Z" fill="#0d4f86"/>
+<text x="170" y="110" fill="#17324a" font-family="Arial" font-size="42">Votre photo ici</text>
+</svg>
