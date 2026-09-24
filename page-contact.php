@@ -78,14 +78,14 @@ if ( $_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact_form']) ) {
             );
 
             /* Envoi */
-            $sent = wp_mail(
-                $to,
-                $mail_subject,
-                $mail_message,
-                $headers
-            );
+            $sent = wp_mail($to, $mail_subject, $mail_message, $headers);
 
-            $contact_status = $sent ? 'success' : 'error';
+            if ( $sent ) {
+                wp_safe_redirect( home_url('/message-envoye/') );
+                exit;
+            }
+
+            $contact_status = 'error';
         }
     }
 }
