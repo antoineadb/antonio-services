@@ -1,0 +1,59 @@
+services:
+  - type: web
+    name: antonio-service
+    env: docker
+    plan: starter
+    autoDeploy: true
+    disk:
+      name: antonio-service-wordpress
+      mountPath: /var/www/html
+      sizeGB: 10
+
+    envVars:
+      - key: WORDPRESS_DB_HOST
+        fromService:
+          name: antonio-service-db
+          type: pserv
+          property: host
+
+      - key: WORDPRESS_DB_NAME
+        fromService:
+          name: antonio-service-db
+          type: pserv
+          envVarKey: MYSQL_DATABASE
+
+      - key: WORDPRESS_DB_USER
+        fromService:
+          name: antonio-service-db
+          type: pserv
+          envVarKey: MYSQL_USER
+
+      - key: WORDPRESS_DB_PASSWORD
+        fromService:
+          name: antonio-service-db
+          type: pserv
+          envVarKey: MYSQL_PASSWORD
+
+  - type: pserv
+    name: antonio-service-db
+    repo: https://github.com/render-examples/mysql.git
+    env: docker
+    plan: starter
+    autoDeploy: true
+    disk:
+      name: antonio-service-mysql
+      mountPath: /var/lib/mysql
+      sizeGB: 10
+
+    envVars:
+      - key: MYSQL_DATABASE
+        value: wordpress
+
+      - key: MYSQL_USER
+        value: wordpress
+
+      - key: MYSQL_PASSWORD
+        generateValue: true
+
+      - key: MYSQL_ROOT_PASSWORD
+        generateValue: true
