@@ -441,3 +441,70 @@ add_action(
     'template_redirect',
     'antonio_services_handle_testimonial_form'
 );
+
+/* =========================================================
+   COMPTEUR DE VISITES
+   ========================================================= */
+
+function antonio_services_count_visit() {
+
+    if ( is_admin() ) {
+        return;
+    }
+
+    if ( current_user_can( 'manage_options' ) ) {
+        return;
+    }
+
+    if ( wp_doing_ajax() ) {
+        return;
+    }
+
+    if ( defined( 'REST_REQUEST' ) && REST_REQUEST ) {
+        return;
+    }
+
+    if ( is_feed() ) {
+        return;
+    }
+
+    if ( isset( $_COOKIE['antonio_visit_counted'] ) ) {
+        return;
+    }
+
+    $count = (int) get_option(
+        'antonio_services_visit_count',
+        0
+    );
+
+    $count++;
+
+    update_option(
+        'antonio_services_visit_count',
+        $count
+    );
+
+    setcookie(
+        'antonio_visit_counted',
+        '1',
+        time() + 1800,
+        COOKIEPATH,
+        COOKIE_DOMAIN
+    );
+}
+
+add_action(
+    'template_redirect',
+    'antonio_services_count_visit'
+);
+
+add_action( 'template_redirect', 'antonio_services_count_visit' );
+
+
+function antonio_services_get_visit_count() {
+
+    return (int) get_option(
+        'antonio_services_visit_count',
+        0
+    );
+}

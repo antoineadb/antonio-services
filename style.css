@@ -2149,3 +2149,12 @@ html {
 #laisser-un-temoignage {
   scroll-margin-top: 100px;
 }
+
+/* Compteur de visites */
+
+.site-counter {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 12px;
+  color: rgba(200, 217, 228, 0.72);
+}
