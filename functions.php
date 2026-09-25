@@ -431,15 +431,11 @@ function antonio_services_handle_testimonial_form() {
     );
 
     wp_safe_redirect(
-        add_query_arg(
-            'temoignage_envoye',
-            '1',
-            wp_get_referer()
-        )
+        home_url( '/temoignage-envoye/' )
     );
 
     exit;
-}
+    }
 
 add_action(
     'template_redirect',
