@@ -47,6 +47,8 @@ function antonio_services_seo_title( $title ) {
 
         return 'Contact | Services & Compagnie — Grenoble';
 
+    } elseif ( is_page('homme-de-compagnie-a-grenoble') ) {
+        return 'Homme de compagnie à Grenoble | Services & Compagnie';
     }
 
     return $title;
@@ -73,6 +75,10 @@ function antonio_services_seo_description() {
 
         $description = 'Une question, un besoin ou une demande particulière ? Contactez Antonio pour en parler simplement.';
 
+     } elseif ( is_page('homme-de-compagnie-a-grenoble') ) {
+
+        $description = 'Homme de compagnie à Grenoble : accompagnement masculin, compagnie, sorties et présence pour partager un moment agréable, sur rendez-vous.';
+    
     } else {
 
         return;

@@ -171,17 +171,23 @@ get_header();
 
         <div class="services-category-intro">
 
-          <span class="services-icon">🌿</span>
+        <span class="services-icon">🌿</span>
 
-          <h2>Compagnie &amp; accompagnement</h2>
+        <h2>Compagnie &amp; accompagnement</h2>
 
-          <p>
-            Parfois, on a simplement envie de sortir, de découvrir un endroit,
-            d'aller quelque part ou de partager un moment agréable.
-          </p>
+        <p>
+          Parfois, on a simplement envie de sortir, de découvrir un endroit,
+          d'aller quelque part ou de partager un moment agréable.
+        </p>
 
-        </div>
+        <p>
+          Vous souhaitez en savoir plus sur mes services de
+          <a href="<?php echo esc_url( home_url('/homme-de-compagnie-a-grenoble/') ); ?>">
+            compagnie et d'accompagnement à Grenoble
+          </a> ?
+        </p>
 
+      </div>
 
         <div class="services-grid">
 
