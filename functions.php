@@ -514,3 +514,46 @@ function antonio_services_get_visit_count() {
         0
     );
 }
+/* =========================================================
+   DONNÉES STRUCTURÉES - ORGANIZATION
+   ========================================================= */
+
+function antonio_services_organization_schema() {
+
+    if ( ! is_front_page() ) {
+        return;
+    }
+
+    $schema = array(
+        '@context' => 'https://schema.org',
+        '@type'    => 'Organization',
+        'name'     => 'Antonio — Services & Compagnie',
+        'alternateName' => 'Services & Compagnie',
+        'url'      => home_url( '/' ),
+        'description' => 'Services d’aide, d’accompagnement et de compagnie à Grenoble et alentours.',
+        'email'    => 'antonio.contact38@gmail.com',
+        'areaServed' => array(
+            '@type' => 'City',
+            'name'  => 'Grenoble',
+            'address' => array(
+                '@type' => 'PostalAddress',
+                'addressCountry' => 'FR'
+            )
+        )
+    );
+
+    echo '<script type="application/ld+json">' .
+        wp_json_encode(
+            $schema,
+            JSON_UNESCAPED_UNICODE |
+            JSON_UNESCAPED_SLASHES |
+            JSON_PRETTY_PRINT
+        ) .
+        '</script>' . "\n";
+}
+
+add_action(
+    'wp_head',
+    'antonio_services_organization_schema',
+    5
+);
