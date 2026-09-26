@@ -470,32 +470,92 @@ function antonio_services_count_visit() {
         return;
     }
 
+    if ( defined( 'DOING_CRON' ) && DOING_CRON ) {
+        return;
+    }
+
     if ( is_feed() ) {
         return;
     }
 
+    /*
+     * Ne pas compter les robots et crawlers.
+     */
+    $user_agent = isset( $_SERVER['HTTP_USER_AGENT'] )
+        ? strtolower( sanitize_text_field( wp_unslash( $_SERVER['HTTP_USER_AGENT'] ) ) )
+        : '';
+
+    $bots = array(
+        'bot',
+        'crawler',
+        'spider',
+        'slurp',
+        'google',
+        'bingpreview',
+        'bingbot',
+        'yandex',
+        'baidu',
+        'duckduckbot',
+        'facebookexternalhit',
+        'twitterbot',
+        'linkedinbot',
+        'semrush',
+        'ahrefs',
+        'mj12bot',
+        'petalbot',
+        'bytespider',
+        'applebot',
+    );
+
+    foreach ( $bots as $bot ) {
+        if ( strpos( $user_agent, $bot ) !== false ) {
+            return;
+        }
+    }
+
+    /*
+     * Une même personne n'est comptée qu'une fois
+     * toutes les 30 minutes.
+     */
     if ( isset( $_COOKIE['antonio_visit_counted'] ) ) {
         return;
     }
 
-    $count = (int) get_option(
-        'antonio_services_visit_count',
-        0
+    global $wpdb;
+
+    /*
+     * Incrémentation atomique pour éviter les doubles comptages
+     * lorsque plusieurs requêtes arrivent simultanément.
+     */
+    $wpdb->query(
+        $wpdb->prepare(
+            "UPDATE {$wpdb->options}
+             SET option_value = CAST(option_value AS UNSIGNED) + 1
+             WHERE option_name = %s",
+            'antonio_services_visit_count'
+        )
     );
 
-    $count++;
-
-    update_option(
-        'antonio_services_visit_count',
-        $count
-    );
+    /*
+     * Si l'option n'existe pas encore, on la crée.
+     */
+    if ( 0 === $wpdb->rows_affected ) {
+        add_option(
+            'antonio_services_visit_count',
+            1,
+            '',
+            false
+        );
+    }
 
     setcookie(
         'antonio_visit_counted',
         '1',
         time() + 1800,
         COOKIEPATH,
-        COOKIE_DOMAIN
+        COOKIE_DOMAIN,
+        is_ssl(),
+        true
     );
 }
 
@@ -503,8 +563,6 @@ add_action(
     'template_redirect',
     'antonio_services_count_visit'
 );
-
-add_action( 'template_redirect', 'antonio_services_count_visit' );
 
 
 function antonio_services_get_visit_count() {
