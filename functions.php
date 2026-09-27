@@ -462,6 +462,22 @@ function antonio_services_count_visit() {
         return;
     }
 
+    // Ne pas comptabiliser les visites d'Antonio
+    if (
+        isset( $_SERVER['REMOTE_ADDR'] ) &&
+        in_array(
+            $_SERVER['REMOTE_ADDR'],
+            array(
+                '92.157.45.143',
+                '127.0.0.1',
+                '::1'
+            ),
+            true
+        )
+    ) {
+        return;
+    }
+
     if ( wp_doing_ajax() ) {
         return;
     }
