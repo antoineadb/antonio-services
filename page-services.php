@@ -7,6 +7,8 @@ get_header();
 
 <main class="services-page">
 
+  <!-- HERO -->
+
   <section class="services-hero">
     <div class="container">
 
@@ -15,48 +17,106 @@ get_header();
       <h1>Mes services</h1>
 
       <p class="services-intro">
-        Une aide concrète au quotidien, mais aussi la possibilité
-        d'être accompagné pour sortir, découvrir, partager et profiter
-        simplement d'un bon moment.
+        Une aide concrète au quotidien, des solutions numériques,
+        de l'accompagnement et des moments de bien-être.
       </p>
 
     </div>
   </section>
 
-<section class="services-presentation">
-  <div class="container services-presentation-layout">
 
-    <div class="services-presentation-photo">
-      <img
-        src="<?php echo get_template_directory_uri(); ?>/assets/contact-antonio.png"
-        alt="Antonio en extérieur"
-      >
+  <!-- PRÉSENTATION -->
+
+  <section class="services-presentation">
+    <div class="container services-presentation-layout">
+
+      <div class="services-presentation-photo">
+        <img
+          src="<?php echo get_template_directory_uri(); ?>/assets/contact-antonio.png"
+          alt="Antonio en extérieur"
+        >
+      </div>
+
+      <div class="services-presentation-text">
+
+        <p class="services-eyebrow">Une aide qui reste humaine</p>
+
+        <h2>Des services, mais surtout une présence.</h2>
+
+        <p>
+          Derrière chaque demande, il y a surtout une personne à écouter,
+          un besoin à comprendre et une solution à trouver.
+        </p>
+
+        <p>
+          Mon objectif est de vous simplifier les choses avec une approche
+          simple, disponible et adaptée à vos besoins.
+        </p>
+
+      </div>
+
     </div>
+  </section>
 
-    <div class="services-presentation-text">
 
-      <p class="services-eyebrow">Une aide qui reste humaine</p>
+  <!-- LES 3 GRANDES CATÉGORIES -->
 
-      <h2>Des services, mais surtout une présence.</h2>
-
-      <p>
-        Derrière chaque demande, il y a surtout une personne à écouter,
-        un besoin à comprendre et une solution à trouver.
-      </p>
-
-      <p>
-        Mon objectif est de vous simplifier les choses, avec une approche
-        simple, disponible et adaptée à vos besoins.
-      </p>
-
-    </div>
-
-  </div>
-</section>
   <section class="services-section">
+
     <div class="container">
 
-      <!-- SERVICES DU QUOTIDIEN -->
+      <div class="services-category">
+
+        <div class="services-category-intro">
+
+          <span class="services-icon">💻</span>
+
+          <h2>Informatique &amp; solutions numériques</h2>
+
+          <p>
+            Besoin d'aide avec votre ordinateur, votre smartphone,
+            votre connexion internet ou un projet de site web ?
+            Je peux vous accompagner, de l'installation au dépannage,
+            jusqu'à la création d'un site personnalisé.
+          </p>
+
+          <a
+            class="button"
+            href="<?php echo esc_url( home_url('/informatique-grenoble/') ); ?>"
+          >
+            Découvrir mes services informatiques
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="services-category services-category-compagnie">
+
+        <div class="services-category-intro">
+
+          <span class="services-icon">🌿</span>
+
+          <h2>Accompagnement &amp; sorties</h2>
+
+          <p>
+            Sorties, déplacements, démarches, achats ou simplement
+            l'envie de partager un moment : je vous accompagne
+            selon vos besoins et vos envies.
+          </p>
+
+          <a
+            class="button"
+            href="<?php echo esc_url( home_url('/accompagnement-grenoble/') ); ?>"
+          >
+            Découvrir l'accompagnement
+          </a>
+
+        </div>
+
+      </div>
+
 
       <div class="services-category">
 
@@ -64,265 +124,72 @@ get_header();
 
           <span class="services-icon">🤲</span>
 
-          <h2>Services du quotidien</h2>
+          <h2>Massage sensuel &amp; bien-être</h2>
 
           <p>
-            Certaines choses paraissent simples… jusqu'au moment où elles
-            deviennent compliquées ou prennent beaucoup de temps.
-            Je peux vous aider à les gérer plus sereinement.
+            Une nouvelle activité autour du bien-être et de la détente
+            sera prochainement proposée.
+          </p>
+
+          <p>
+            <strong>Prochainement — actuellement en formation.</strong>
           </p>
 
         </div>
 
-
-        <div class="services-grid">
-
-          <article class="service-card">
-
-            <div class="service-card-icon">💻</div>
-
-            <h3>Informatique</h3>
-
-            <p>
-              Configuration d'un PC ou d'un Mac, installation de logiciels,
-              mises à jour, antivirus et aide à la prise en main.
-            </p>
-
-          </article>
+      </div>
 
 
-          <article class="service-card">
+      <!-- ZONE D'INTERVENTION -->
 
-            <div class="service-card-icon">📱</div>
+      <section class="services-zone">
 
-            <h3>Smartphone &amp; tablette</h3>
+        <div class="container">
 
-            <p>
-              Réglages, installation d'applications, comptes, sauvegardes
-              et aide pour utiliser plus facilement vos appareils.
-            </p>
+          <p class="services-eyebrow">📍 Zone d’intervention</p>
 
-          </article>
+          <h2>Grenoble et les alentours</h2>
 
+          <p>
+            J’interviens à Grenoble et dans les communes alentours,
+            dans un rayon d’environ 50 km.
+          </p>
 
-          <article class="service-card">
-
-            <div class="service-card-icon">🌐</div>
-
-            <h3>Internet &amp; Wi-Fi</h3>
-
-            <p>
-              Installation et réglage d'une box, connexion des appareils,
-              Wi-Fi et aide en cas de problème de connexion.
-            </p>
-
-          </article>
-
-
-          <article class="service-card">
-
-            <div class="service-card-icon">🛒</div>
-
-            <h3>Achats en ligne</h3>
-
-            <p>
-              Recherche d'un produit, commande en ligne, suivi de livraison,
-              retour ou échange d'une commande.
-            </p>
-
-          </article>
-
-
-          <article class="service-card">
-
-            <div class="service-card-icon">📄</div>
-
-            <h3>Démarches &amp; documents</h3>
-
-            <p>
-              Aide pour remplir un formulaire, organiser des documents,
-              prendre un rendez-vous ou effectuer une démarche en ligne.
-            </p>
-
-          </article>
-
-
-          <article class="service-card">
-
-            <div class="service-card-icon">📺</div>
-
-            <h3>TV &amp; multimédia</h3>
-
-            <p>
-              Installation et configuration d'une télévision, d'un lecteur
-              DVD ou Blu-ray, d'une box et de vos équipements multimédias.
-            </p>
-
-          </article>
+          <p>
+            Chaque demande étant différente, n’hésitez pas à me contacter
+            pour vérifier ensemble si je peux vous accompagner.
+          </p>
 
         </div>
 
-      </div>
-
-
-      <!-- COMPAGNIE & ACCOMPAGNEMENT -->
-
-      <div class="services-category services-category-compagnie">
-
-        <div class="services-category-intro">
-
-        <span class="services-icon">🌿</span>
-
-        <h2>Compagnie &amp; accompagnement</h2>
-
-        <p>
-          Parfois, on a simplement envie de sortir, de découvrir un endroit,
-          d'aller quelque part ou de partager un moment agréable.
-        </p>
-
-        <p>
-          Vous souhaitez en savoir plus sur mes services de
-          <a href="<?php echo esc_url( home_url('/homme-de-compagnie-a-grenoble/') ); ?>">
-            compagnie et d'accompagnement à Grenoble
-          </a> ?
-        </p>
-
-      </div>
-
-        <div class="services-grid">
-
-          <article class="service-card">
-
-            <div class="service-card-icon">🍽️</div>
-
-            <h3>Restaurant</h3>
-
-            <p>
-              Une table, un bon repas et simplement le plaisir
-              de partager un moment convivial.
-            </p>
-
-          </article>
-
-
-          <article class="service-card">
-
-            <div class="service-card-icon">🎬</div>
-
-            <h3>Cinéma</h3>
-
-            <p>
-              Une séance de cinéma et un moment à partager avant
-              ou après le film.
-            </p>
-
-          </article>
-
-
-          <article class="service-card">
-
-            <div class="service-card-icon">🎭</div>
-
-            <h3>Théâtre &amp; spectacles</h3>
-
-            <p>
-              Concert, théâtre, spectacle ou événement :
-              je peux vous accompagner selon vos envies.
-            </p>
-
-          </article>
-
-
-          <article class="service-card">
-
-            <div class="service-card-icon">🚗</div>
-
-            <h3>Sorties &amp; déplacements</h3>
-
-            <p>
-              Pour une sortie, une visite ou un déplacement,
-              nous pouvons organiser ensemble ce qui vous ferait plaisir.
-            </p>
-
-          </article>
-
-
-          <article class="service-card">
-
-            <div class="service-card-icon">🌳</div>
-
-            <h3>Balades &amp; activités</h3>
-
-            <p>
-              Une promenade, une découverte ou simplement l'envie
-              de prendre l'air et de profiter d'un moment agréable.
-            </p>
-
-          </article>
-
-
-          <article class="service-card">
-
-            <div class="service-card-icon">✈️</div>
-
-            <h3>Accompagnement</h3>
-
-            <p>
-              Pour certains déplacements ou sorties plus longues,
-              nous pouvons également envisager un accompagnement personnalisé.
-            </p>
-
-          </article>
-
-        </div>
-
-      </div>
+      </section>
 
 
       <!-- CONTACT -->
 
-     <!-- ZONE D'INTERVENTION -->
+      <div class="services-cta">
 
-<section class="services-zone">
-  <div class="container">
+        <h2>Vous avez un besoin particulier ?</h2>
 
-    <p class="services-eyebrow">📍 Zone d’intervention</p>
+        <p>
+          Tout ne rentre pas forcément dans une liste.
+          Présentez-moi simplement votre demande et nous verrons ensemble
+          comment je peux vous aider.
+        </p>
 
-    <h2>Grenoble et les alentours</h2>
+        <a
+          class="button"
+          href="<?php echo esc_url( home_url('/contact/') ); ?>"
+        >
+          Me contacter
+        </a>
 
-    <p>
-      J’interviens à Grenoble et dans les communes alentours,
-      dans un rayon d’environ 50 km.
-    </p>
+      </div>
 
-    <p>
-      Chaque demande étant différente, n’hésitez pas à me contacter
-      pour vérifier ensemble si je peux vous accompagner.
-    </p>
+    </div>
 
-  </div>
-</section>
+  </section>
 
-
-<!-- CONTACT -->
-
-<div class="services-cta">
-
-  <h2>Vous avez un besoin particulier ?</h2>
-
-  <p>
-    Tout ne rentre pas forcément dans une liste.
-    Présentez-moi simplement votre demande et nous verrons ensemble
-    comment je peux vous aider.
-  </p>
-
-  <a
-    class="button"
-    href="<?php echo esc_url( home_url('/contact/') ); ?>"
-  >
-    Me contacter
-  </a>
-
-</div>
+</main>
 
 <?php get_footer(); ?>

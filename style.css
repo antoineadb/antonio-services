@@ -2167,3 +2167,196 @@ html {
   width: 100%;
 
 }
+.services-category-intro .button {
+  margin-top: 20px;
+}
+.massage-coming-soon{
+  margin:45px 0 45px;
+  padding:20px 0;
+  background:transparent;
+  border-radius:0;
+}
+.massage-coming-soon h2{
+  color:var(--ink);
+  font-size:34px;
+  font-weight:500;
+  line-height:1.2;
+  margin:0 0 10px;
+}
+.massage-coming-soon-icon{
+  display:block;
+  font-size:30px;
+  line-height:1;
+  margin-bottom:12px;
+}
+.massage-coming-soon p{
+  max-width:950px;
+}
+/* =========================================
+   MASSAGE — PROCHAINEMENT
+   ========================================= */
+
+
+
+.massage-eyebrow {
+  margin: 0 0 8px;
+  color: #155b91;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.massage-content > p:not(.massage-eyebrow) {
+  margin: 0;
+  max-width: 1000px;
+  color: #526d84;
+}
+/* =========================================================
+   MASSAGE — PROCHAINEMENT
+   ========================================================= */
+
+.massage-coming-soon {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    align-items: center;
+    gap: 30px;
+
+    margin: 55px 0 60px;
+    padding: 32px 45px;
+
+    background: #fff8df;
+    border: 1px solid #efd58a;
+    border-radius: 28px;
+
+    box-shadow: 0 8px 25px rgba(47, 33, 25, 0.05);
+}
+
+
+/* Logo */
+
+.massage-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 135px;
+    height: 135px;
+
+    color: #c58b2a;
+}
+
+
+/* Contenu */
+
+.massage-content {
+    max-width: 1000px;
+}
+
+.massage-eyebrow {
+    margin: 0 0 8px;
+
+    color: #07548a;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+}
+
+.massage-content h2 {
+    margin: 0 0 18px;
+    color: var(--ink);
+    font-size: 26px;
+    line-height: 1.25;
+}
+
+.massage-content > p {
+    margin: 0;
+
+    color: var(--text);
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+
+/* Badge */
+
+.massage-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-top: 22px;
+    padding: 11px 25px;
+
+    background: #f5d477;
+    border-radius: 999px;
+
+    color: #173b5d;
+    font-size: 16px;
+}
+
+.massage-status strong {
+    font-weight: 700;
+}
+
+
+/* Mobile */
+
+@media (max-width: 800px) {
+
+    .massage-coming-soon {
+        grid-template-columns: 1fr;
+        gap: 15px;
+
+        padding: 30px 25px;
+        text-align: center;
+    }
+
+    .massage-icon {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
+    }
+
+    .massage-icon svg {
+        width: 95px;
+        height: 95px;
+    }
+
+    .massage-status {
+        justify-content: center;
+    }
+}
+
+
+
+/* Version mobile */
+
+@media (max-width: 700px) {
+
+  .massage-coming-soon {
+    margin: 50px 0;
+    padding: 32px 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .massage-icon {
+    width: 80px;
+    height: 80px;
+    flex-basis: 80px;
+  }
+
+  .massage-content h2 {
+    font-size: 26px;
+  }
+
+  .massage-status {
+    flex-wrap: wrap;
+  }
+}
+.massage-icon img {
+    display: block;
+    width: 105px;
+    height: auto;
+    max-width: 100%;
+}
